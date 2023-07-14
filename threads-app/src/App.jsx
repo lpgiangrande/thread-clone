@@ -31,12 +31,12 @@ const App = () => {
   
   return (
     <>
-      <div className="app">
-        <Nav/> 
+      {user && <div className="app">
+        <Nav url={user.instagram_url}/> 
         <Header/>
         <Feed/>
         {/* <PopUp/> */}
-      </div>
+      </div>}
     </>
   )
 }
