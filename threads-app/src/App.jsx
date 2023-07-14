@@ -5,14 +5,16 @@ import Feed from './components/Feed'
 import PopUp from './components/PopUp'
 
 
-function App() {
+const App = () => {
   
   return (
     <>
-     <Nav/>
-     <Header />
-     <Feed />
-     <PopUp />
+      <div className="app">
+        <Nav/> 
+        <Header/>
+        <Feed/>
+        <PopUp/>
+      </div>
     </>
   )
 }
