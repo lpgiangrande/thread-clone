@@ -6,6 +6,18 @@ const Feed = () => {
     <>
      <div className="feed">
       <Thread />
+      <Thread />
+      <Thread />
+      <Thread />
+      <Thread />
+      <Thread />
+      <Thread />
+      <Thread />
+      <Thread />
+      <Thread />
+      <Thread />
+      <Thread />
+      <Thread />
      </div>
     </>
   )
