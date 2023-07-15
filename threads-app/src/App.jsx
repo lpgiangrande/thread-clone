@@ -4,41 +4,156 @@ import Nav from './components/Nav'
 import Header from './components/Header'
 import Feed from './components/Feed'
 import PopUp from './components/PopUp'
+import WriteIcon from './components/WriteIcon'
 
 
 const App = () => {
 
-  const [ user, setUser ] = useState(null);
+  const [ user, setUser ] = useState(null)
+  const [ threads, setThreads ] = useState(null)
+  const [ viewThreadsFeed, setViewThreadsFeed ] = useState(true)
+  const [ filteredThreads, setFilteredThreads ] = useState(null)
+  const [ openPopUp, setOpenPopUp ] = useState(false) 
+
   const userId = "b23827d6-2601-4e15-8c98-52551f0009e3";
+  //const userId = "0e704255-a132-4dd5-b39d-9552debce019";
+  //const userId = "26e782ed-3767-4bdc-9fc6-0d52c946f67e";
 
-  const getUser = async () => {
-    try {
-      const response = await fetch(`http://localhost:3000/users?user_uuid=${userId}`);
-      const data = await response.json()
-      setUser(data[0])
+  // user & their threads
 
-    } catch (err) {
-      console.error(err)
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const userResponse = await fetch(`http://localhost:3000/users?user_uuid=${userId}`);
+        const userData = await userResponse.json();
+        setUser(userData[0]);
+        //console.log("User data:", userData[0]);
+
+        const threadsResponse = await fetch(`http://localhost:3000/threads?thread_from=${userId}`);
+        const threadsData = await threadsResponse.json();
+        setThreads(threadsData);
+        //console.log("Threads data:", threadsData);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    
+    fetchData();
+  }, []);
+
+
+  // feed : threads & replies sections
+
+  useEffect(() => {
+    // console.log("View Threads Feed:", viewThreadsFeed);
+    // console.log("Threads:", threads);
+
+    // click on "threads" section  : threads that are not replies (stand-alone)
+    if (viewThreadsFeed) {
+      const standAloneThreads = threads?.filter(thread => thread.reply_to === null);
+      setFilteredThreads(standAloneThreads);
+    // click on "replies" section : replies to others' threads
+    } else {
+      const replyThreads = threads?.filter(thread => thread.reply_to !== null);
+      setFilteredThreads(replyThreads);
     }
+  }, [threads, viewThreadsFeed]);
+
+  if (!user) {
+    return null; // or a loading spinner, error message, etc.
   }
 
-  useEffect(() =>{
-    getUser()
-  }, [])
 
-  console.log(user)
-  
-  
   return (
     <>
       {user && <div className="app">
         <Nav url={user.instagram_url}/> 
-        <Header/>
-        <Feed/>
-        {/* <PopUp/> */}
+        <Header
+          user={user}
+          viewThreadsFeed={viewThreadsFeed}
+          setViewThreadsFeed={setViewThreadsFeed}
+        />
+        <Feed
+          user={user}
+          setOpenPopUp={setOpenPopUp}
+          filteredThreads={filteredThreads}
+        />
+       {
+        openPopUp && 
+          <PopUp
+            user={user}
+            setOpenPopUp={setOpenPopUp}
+          />
+        }
+        <div onClick={() => setOpenPopUp(true)}>
+          <WriteIcon/>
+        </div>
       </div>}
     </>
   )
 }
 
 export default App
+
+
+
+/*---- user -----*/
+  // const getUser = async () => {
+  //   try {
+  //     const response = await fetch(`http://localhost:3000/users?user_uuid=${userId}`);
+  //     const data = await response.json()
+  //     setUser(data[0])
+
+  //   } catch (err) {
+  //     console.error(err)
+  //   }
+  // }
+
+   /*---- threads ----*/
+  // const getThreads = async () => {
+  //   try {
+  //     const response = await fetch(`http://localhost:3000/threads?thread_from=${userId}`);
+  //     const data = await response.json()
+  //     setThreads(data)
+
+  //   } catch (err) {
+  //     console.error(err)
+  //   }
+  // }
+
+  // const getThreadsFeed = () => {
+  //   // click on "threads" section  : threads that are not replies (stand-alone)
+  //   if(viewThreadsFeed){
+  //     const standAloneThreads = threads?.filter(thread => thread.reply_to === null)
+  //     setFilteredThreads(standAloneThreads) 
+  //   }
+
+  //   // click on "replies" section : replies to others' threads
+  //   if (!viewThreadsFeed) {
+  //     const replyThreads = threads?.filter(thread => thread.reply_to !== null)
+  //     setFilteredThreads(replyThreads) 
+  //   }
+  // }
+
+  // user & threads
+  // useEffect(() =>{
+  //   getUser()
+  //   getThreads()
+  // }, [])
+
+  // each time the threads view changes (toggle between 'threads' & 'replies' sections)
+  // useEffect(() =>{
+  //   getThreadsFeed()
+  // }, [user, threads, viewThreadsFeed])
+
+  /*-------------------*/ 
+  //console.log("USER", user)
+  //console.log("THREADS", threads)
+  //console.log("VIEWTHREADFEED", viewThreadsFeed)
+  // console.log("FILTEREDTHREADS", filteredThreads)
+  /*-------------------*/ 
+  /*
+  When the state variables managed by useState are updated, 
+  React will re-render the component, and any changes caused by useEffect 
+  will be reflected in the updated render output.
+  */

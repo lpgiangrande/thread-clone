@@ -1,26 +1,24 @@
-import Thread from "./Thread"
+/**
+ * FEED COMPONENT
+ * Renders a Thread component for each thread in the filteredThreads array.
+ */
 
-const Feed = () => {
-  
+import Thread from "./Thread";
+
+const Feed = ({ user, setOpenPopUp, filteredThreads }) => {
   return (
-    <>
-     <div className="feed">
-      <Thread />
-      <Thread />
-      <Thread />
-      <Thread />
-      <Thread />
-      <Thread />
-      <Thread />
-      <Thread />
-      <Thread />
-      <Thread />
-      <Thread />
-      <Thread />
-      <Thread />
-     </div>
-    </>
-  )
-}
+    <div className="feed">
+      {/* adds an additional check to ensure that filteredThreads is not undefined or null before attempting to map over it */}
+      {filteredThreads && filteredThreads.map((filteredThread) => (
+        <Thread 
+          key={filteredThread.id} 
+          user={user} 
+          setOpenPopUp={setOpenPopUp}
+          filteredThread={filteredThread} 
+        />
+      ))}
+    </div>
+  );
+};
 
-export default Feed
+export default Feed;
