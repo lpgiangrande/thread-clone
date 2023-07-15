@@ -12,3 +12,5 @@ Reste à faire :
 - pouvoir cliquer sur le profil de la personne qui répond
 
 ![screen](./threads-app/src/screen.png "screen app")
+
+tuto from https://www.youtube.com/watch?v=J7HMa48mU3E&ab_channel=CodewithAniaKub%C3%B3w
