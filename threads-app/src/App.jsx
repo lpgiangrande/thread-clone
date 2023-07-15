@@ -14,12 +14,14 @@ const App = () => {
   const [ viewThreadsFeed, setViewThreadsFeed ] = useState(true)
   const [ filteredThreads, setFilteredThreads ] = useState(null)
   const [ openPopUp, setOpenPopUp ] = useState(false) 
+  const [ interactiveThread, setInteractiveThread ] = useState(null)
+  const [ popUpFeedThreads, setPopUpFeedThreads ] = useState(null)
 
-  const userId = "b23827d6-2601-4e15-8c98-52551f0009e3";
-  //const userId = "0e704255-a132-4dd5-b39d-9552debce019";
+  //const userId = "b23827d6-2601-4e15-8c98-52551f0009e3";
+  const userId = "0e704255-a132-4dd5-b39d-9552debce019";
   //const userId = "26e782ed-3767-4bdc-9fc6-0d52c946f67e";
 
-/*---- user -----*/
+  /*--- user ---*/
 
   const getUser = async () => {
     try {
@@ -32,8 +34,9 @@ const App = () => {
     }
   }
 
-   /*---- threads ----*/
-   
+
+  /*--- threads ---*/
+
   const getThreads = async () => {
     try {
       const response = await fetch(`http://localhost:3000/threads?thread_from=${userId}`);
@@ -59,6 +62,21 @@ const App = () => {
     }
   }
 
+
+  /*--- threads -> replies ---*/
+
+  const getReplies = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/threads/?reply_to=${interactiveThread?.id}`);
+      const data = await response.json()
+      setPopUpFeedThreads(data)
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+ 
+
   // user & threads
   useEffect(() =>{
     getUser()
@@ -69,6 +87,13 @@ const App = () => {
   useEffect(() =>{
     getThreadsFeed()
   }, [user, threads, viewThreadsFeed])
+
+  //console.log("interactiveThread : ", interactiveThread)
+  //console.log("pop up threads : ", popUpFeedThreads)
+
+  useEffect(() => {
+    getReplies()
+  }, [interactiveThread])
 
   /*-------------------*/ 
   //console.log("USER", user)
@@ -97,12 +122,14 @@ const App = () => {
           setOpenPopUp={setOpenPopUp}
           filteredThreads={filteredThreads}
           getThreads={getThreads}
+          setInteractiveThread={setInteractiveThread}
         />
        {
         openPopUp && 
           <PopUp
             user={user}
             setOpenPopUp={setOpenPopUp}
+            popUpFeedThreads={popUpFeedThreads}
           />
         }
         <div onClick={() => setOpenPopUp(true)}>

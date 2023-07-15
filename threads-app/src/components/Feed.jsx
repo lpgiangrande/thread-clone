@@ -5,7 +5,16 @@
 
 import Thread from "./Thread";
 
-const Feed = ({ user, setOpenPopUp, filteredThreads, getThreads }) => {
+const Feed = (
+  { 
+    user, 
+    setOpenPopUp, 
+    filteredThreads, 
+    getThreads, 
+    setInteractiveThread
+  }
+) => {
+
   return (
     <div className="feed">
       {/* adds an additional check to ensure that filteredThreads is not undefined or null before attempting to map over it */}
@@ -16,6 +25,7 @@ const Feed = ({ user, setOpenPopUp, filteredThreads, getThreads }) => {
           setOpenPopUp={setOpenPopUp}
           filteredThread={filteredThread} 
           getThreads={getThreads}
+          setInteractiveThread={setInteractiveThread}
         />
       ))}
     </div>
