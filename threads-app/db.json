@@ -1,116 +1,115 @@
 {
-    "users" : [
+  "users": [
+    {
+      "id": 0,
+      "user_uuid": "b23827d6-2601-4e15-8c98-52551f0009e3",
+      "username": "Anita LLV",
+      "handle": "anita_llv",
+      "bio": "This is my user bio, I write relevant user bios for a living.",
+      "link": "https://www.anitallv.com",
+      "img": "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "instagram_url": "https://www.instagram.com/princessofidk",
+      "followers": [
         {
-            "id": 0,
-            "user_uuid": "b23827d6-2601-4e15-8c98-52551f0009e3",
-            "username": "Anita LLV",
-            "handle": "anita_llv",
-            "bio": "This is my user bio, I write relevant user bios for a living.",
-            "link": "https://www.anitallv.com",
-            "img": "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "instagram_url": "https://www.instagram.com/princessofidk",
-            "followers" : [
-               {
-                "user_uuid": "0e704255-a132-4dd5-b39d-9552debce019"
-               },
-               {
-                "user_uuid": "d533f76e-4cef-4955-823d-113e285675e3"
-               },
-               {
-                "user_uuid": "26e782ed-3767-4bdc-9fc6-0d52c946f67e"
-               }
-            ]
+          "user_uuid": "0e704255-a132-4dd5-b39d-9552debce019"
         },
         {
-            "id": 1,
-            "user_uuid": "0e704255-a132-4dd5-b39d-9552debce019",
-            "username": "Angry Journalist",
-            "handle": "angryjourno",
-            "bio": "I'm a very important journalist.",
-            "link": "https://www.github.com",
-            "img": "https://images.pexels.com/photos/3772623/pexels-photo-3772623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "instagram_url": "https://www.instagram.com/angryjourno",
-            "followers" : [
-               {
-                "user_uuid": "b23827d6-2601-4e15-8c98-52551f0009e3"
-               }
-            ]
+          "user_uuid": "d533f76e-4cef-4955-823d-113e285675e3"
         },
         {
-            "id": 2,
-            "user_uuid": "26e782ed-3767-4bdc-9fc6-0d52c946f67e",
-            "username": "Rando #3",
-            "handle": "rando3",
-            "bio": "Just a rando, opinions are my own, father of 1.",
-            "link": "https://www.github.com",
-            "img": "https://images.pexels.com/photos/16948950/pexels-photo-16948950/free-photo-of-homme-veste-debout-portrait.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "instagram_url": "https://www.instagram.com/rando3",
-            "followers" : [
-               {
-                "user_uuid": "b23827d6-2601-4e15-8c98-52551f0009e3"
-               },
-               {
-                "user_uuid": "0e704255-a132-4dd5-b39d-9552debce019"
-               }
-            ]
+          "user_uuid": "26e782ed-3767-4bdc-9fc6-0d52c946f67e"
         }
-    ],
-    "threads" : [
+      ]
+    },
+    {
+      "id": 1,
+      "user_uuid": "0e704255-a132-4dd5-b39d-9552debce019",
+      "username": "Angry Journalist",
+      "handle": "angryjourno",
+      "bio": "I'm a very important journalist.",
+      "link": "https://www.github.com",
+      "img": "https://images.pexels.com/photos/3772623/pexels-photo-3772623.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "instagram_url": "https://www.instagram.com/angryjourno",
+      "followers": [
         {
-            "id": 0,
-            "timestamp": "Thu Jul 13 2023 21:24:10 GMT+0200 (heure d’été d’Europe centrale)",
-            "thread_from": "b23827d6-2601-4e15-8c98-52551f0009e3",
-            "thread_to": null,
-            "reply_to": null,
-            "text": "Hi this is my first thread",
-            "likes": [
-                {
-                    "user_uuid": "b23827d6-2601-4e15-8c98-52551f0009e3"
-                },
-                {
-                    "user_uuid": "0e704255-a132-4dd5-b39d-9552debce019"
-                }
-            ]
-        },
-        {
-            "id": 1,
-            "timestamp": "Thu Jul 13 2023 22:24:10 GMT+0200 (heure d’été d’Europe centrale)",
-            "thread_from": "b23827d6-2601-4e15-8c98-52551f0009e3",
-            "thread_to": null,
-            "reply_to": null,
-            "text": "wow crypto slghlgh lj of crypto",
-            "likes": []            
-        },
-        {
-            "id": 2,
-            "timestamp": "Thu Jul 13 2023 22:27:10 GMT+0200 (heure d’été d’Europe centrale)",
-            "thread_from": "0e704255-a132-4dd5-b39d-9552debce019",
-            "thread_to": null,
-            "reply_to": null,
-            "text": "My articles about scammers is ready y'all gonna be furious.",
-            "likes": [
-                {
-                    "user_uuid": "26e782ed-3767-4bdc-9fc6-0d52c946f67e"
-                }
-            ]            
-        },
-        {
-            "id": 3,
-            "timestamp": "Thu Jul 13 2023 22:30:10 GMT+0200 (heure d’été d’Europe centrale)",
-            "thread_from": "26e782ed-3767-4bdc-9fc6-0d52c946f67e",
-            "thread_to": "0e704255-a132-4dd5-b39d-9552debce019",
-            "reply_to": 2,
-            "text": "Looking forward to it!",
-            "likes": []            
-        },
-        {
-            "id": 4,
-            "timestamp": "Thu Jul 14 2023 22:30:10 GMT+0200 (heure d’été d’Europe centrale)",
-            "thread_from": "26e782ed-3767-4bdc-9fc6-0d52c946f67e",
-            "thread_to": null,
-            "reply_to": null,
-            "text": "Hi y'all 👋 !",
-            "likes": []            
+          "user_uuid": "b23827d6-2601-4e15-8c98-52551f0009e3"
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "user_uuid": "26e782ed-3767-4bdc-9fc6-0d52c946f67e",
+      "username": "Rando #3",
+      "handle": "rando3",
+      "bio": "Just a rando, opinions are my own, father of 1.",
+      "link": "https://www.github.com",
+      "img": "https://images.pexels.com/photos/16948950/pexels-photo-16948950/free-photo-of-homme-veste-debout-portrait.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "instagram_url": "https://www.instagram.com/rando3",
+      "followers": [
+        {
+          "user_uuid": "b23827d6-2601-4e15-8c98-52551f0009e3"
+        },
+        {
+          "user_uuid": "0e704255-a132-4dd5-b39d-9552debce019"
+        }
+      ]
+    }
+  ],
+  "threads": [
+    {
+      "id": 0,
+      "timestamp": "Thu Jul 13 2023 21:24:10 GMT+0200 (heure d’été d’Europe centrale)",
+      "thread_from": "b23827d6-2601-4e15-8c98-52551f0009e3",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Hi this is my first thread",
+      "likes": [
+        {
+          "user_uuid": "b23827d6-2601-4e15-8c98-52551f0009e3"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "timestamp": "Thu Jul 13 2023 22:24:10 GMT+0200 (heure d’été d’Europe centrale)",
+      "thread_from": "b23827d6-2601-4e15-8c98-52551f0009e3",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "wow crypto slghlgh lj of crypto",
+      "likes": [
+        {
+          "user_uuid": "b23827d6-2601-4e15-8c98-52551f0009e3"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "timestamp": "Thu Jul 13 2023 22:27:10 GMT+0200 (heure d’été d’Europe centrale)",
+      "thread_from": "0e704255-a132-4dd5-b39d-9552debce019",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "My articles about scammers is ready y'all gonna be furious.",
+      "likes": [
+        {}
+      ]
+    },
+    {
+      "id": 3,
+      "timestamp": "Thu Jul 13 2023 22:30:10 GMT+0200 (heure d’été d’Europe centrale)",
+      "thread_from": "26e782ed-3767-4bdc-9fc6-0d52c946f67e",
+      "thread_to": "0e704255-a132-4dd5-b39d-9552debce019",
+      "reply_to": 2,
+      "text": "Looking forward to it!",
+      "likes": []
+    },
+    {
+      "id": 4,
+      "timestamp": "Thu Jul 14 2023 22:30:10 GMT+0200 (heure d’été d’Europe centrale)",
+      "thread_from": "26e782ed-3767-4bdc-9fc6-0d52c946f67e",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Hi y'all 👋 !",
+      "likes": []
+    }
+  ]
 }
