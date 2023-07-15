@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 0,
+      "id": 1,
       "user_uuid": "b23827d6-2601-4e15-8c98-52551f0009e3",
       "username": "Anita LLV",
       "handle": "anita_llv",
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "id": 1,
+      "id": 2,
       "user_uuid": "0e704255-a132-4dd5-b39d-9552debce019",
       "username": "Angry Journalist",
       "handle": "angryjourno",
@@ -57,25 +57,12 @@
   ],
   "threads": [
     {
-      "id": 0,
+      "id": 1,
       "timestamp": "Thu Jul 13 2023 21:24:10 GMT+0200 (heure d’été d’Europe centrale)",
       "thread_from": "b23827d6-2601-4e15-8c98-52551f0009e3",
       "thread_to": null,
       "reply_to": null,
       "text": "Hi this is my first thread",
-      "likes": [
-        {
-          "user_uuid": "b23827d6-2601-4e15-8c98-52551f0009e3"
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "timestamp": "Thu Jul 13 2023 22:24:10 GMT+0200 (heure d’été d’Europe centrale)",
-      "thread_from": "b23827d6-2601-4e15-8c98-52551f0009e3",
-      "thread_to": null,
-      "reply_to": null,
-      "text": "wow crypto slghlgh lj of crypto",
       "likes": [
         {
           "user_uuid": "b23827d6-2601-4e15-8c98-52551f0009e3"
@@ -119,7 +106,7 @@
       "reply_to": 2,
       "text": "Where can I read it ?",
       "likes": []
-    }, 
+    },
     {
       "id": 6,
       "timestamp": "Thu Jul 15 2023 23:30:10 GMT+0200 (heure d’été d’Europe centrale)",
@@ -128,6 +115,51 @@
       "reply_to": 4,
       "text": "Hey what's up ?",
       "likes": []
+    },
+    {
+      "timestamp": "2023-07-15T16:02:10.069Z",
+      "thread_from": "0e704255-a132-4dd5-b39d-9552debce019",
+      "thread_to": "0e704255-a132-4dd5-b39d-9552debce019",
+      "reply_to": 2,
+      "text": "Test response !",
+      "likes": [],
+      "id": 7
+    },
+    {
+      "timestamp": "2023-07-15T16:04:08.606Z",
+      "thread_from": "0e704255-a132-4dd5-b39d-9552debce019",
+      "thread_to": "0e704255-a132-4dd5-b39d-9552debce019",
+      "reply_to": null,
+      "text": "New tweet ?",
+      "likes": [],
+      "id": 8
+    },
+    {
+      "timestamp": "2023-07-15T16:40:20.247Z",
+      "thread_from": "0e704255-a132-4dd5-b39d-9552debce019",
+      "thread_to": "0e704255-a132-4dd5-b39d-9552debce019",
+      "reply_to": null,
+      "text": "HELLO ! I'm testing the app, the date of tweets seems wrong",
+      "likes": [],
+      "id": 9
+    },
+    {
+      "timestamp": "2023-07-15T16:47:49.048Z",
+      "thread_from": "0e704255-a132-4dd5-b39d-9552debce019",
+      "thread_to": "0e704255-a132-4dd5-b39d-9552debce019",
+      "reply_to": null,
+      "text": "testing the date !",
+      "likes": [],
+      "id": 10
+    },
+    {
+      "timestamp": "2023-07-15T16:57:25.930Z",
+      "thread_from": "0e704255-a132-4dd5-b39d-9552debce019",
+      "thread_to": "0e704255-a132-4dd5-b39d-9552debce019",
+      "reply_to": 10,
+      "text": "replying to myself just to see",
+      "likes": [],
+      "id": 11
     }
   ]
 }

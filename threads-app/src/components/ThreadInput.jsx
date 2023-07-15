@@ -1,10 +1,10 @@
-const ThreadInput = () => {
-
+const ThreadInput = ({user, text, setText, postThread}) => {
+    
     return (
         <>
-            <p></p>
-            <input></input>
-            <button className="primary">Post</button>
+            <p>{user.handle}</p>
+            <input value={text} onChange={e => setText(e.target.value)}/>
+            <button className="primary" onClick={postThread}>Post</button>
         </>
       )
 }

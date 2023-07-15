@@ -4,6 +4,7 @@
  */
 
 import Thread from "./Thread";
+import moment from 'moment'
 
 const Feed = (
   { 
@@ -26,6 +27,7 @@ const Feed = (
           filteredThread={filteredThread} 
           getThreads={getThreads}
           setInteractiveThread={setInteractiveThread}
+          timePassed={moment(filteredThread.timestamp).fromNow()}
         />
       ))}
     </div>

@@ -1,8 +1,16 @@
 import PopUpThread from "./PopUpThread"
 import ThreadInput from "./ThreadInput"
 
-function PopUp({ setOpenPopUp, popUpFeedThreads }) {
-  
+function PopUp(
+  { 
+    user,
+    setOpenPopUp, 
+    popUpFeedThreads, 
+    text, 
+    setText,
+    postThread 
+  }
+) {
     return (
       <>
        <div className="popup">
@@ -13,7 +21,12 @@ function PopUp({ setOpenPopUp, popUpFeedThreads }) {
               popUpFeedThread={popUpFeedThread}
             />
           )}
-          <ThreadInput />
+          <ThreadInput 
+            user={user}
+            text={text}
+            setText={setText}
+            postThread={postThread}
+          />
        </div>
       </>
     )
